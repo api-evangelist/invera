@@ -1,0 +1,45 @@
+generated: '2026-09-11'
+method: probed
+source: https://mcp.invera.io/mcp
+status: published
+server:
+  name: invera
+  transport: http
+  url: https://mcp.invera.io/mcp
+deployment:
+  mode: remote
+  endpoint: https://mcp.invera.io/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-12 (endpoint found in the provider's own documentation, then probed)
+tools_count: 13
+tools:
+- name: byma_search_instrument
+  description: ''
+- name: byma_get_quote
+  description: ''
+- name: byma_get_price_chart
+  description: ''
+- name: byma_get_bond_coupons
+  description: ''
+- name: a3_search_instrument
+  description: ''
+- name: a3_get_quote
+  description: ''
+- name: a3_get_futures_curve
+  description: ''
+- name: a3_get_price_chart
+  description: ''
+- name: a3_get_spot_prices
+  description: ''
+- name: yahoo_search_instrument
+  description: ''
+- name: yahoo_get_quote
+  description: ''
+- name: yahoo_get_price_chart
+  description: ''
+- name: yahoo_get_market_overview
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
