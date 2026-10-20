@@ -21,11 +21,11 @@ tools:
 - name: byma_get_quote
   description: 'Devuelve la última cotización de un instrumento del mercado argentino: último precio,
     cierre previo, variación, máximo/mínimo y, si aplica, precios en dólares (CCL/MEP). Acepta ticker
-    o nombre. Ej: ''¿a cuánto cerró Apple?'' -> symbol ''AAPL''.'
+    o nombre. Ej: ''¿a cuánto cerró Apple?'' -> symbol ''AAPL''. Datos con ~20 min de delay.'
 - name: byma_get_price_chart
   description: 'Devuelve la serie histórica diaria de precios de un instrumento: un gráfico para mostrar
     y la serie completa rueda por rueda (fecha y cierre) en el texto, para comparar, indexar o calcular
-    variaciones. Ej: ''gráfico del GGAL del último mes''.'
+    variaciones. Ej: ''gráfico del GGAL del último mes''. Datos de cierre diario de BYMA.'
 - name: byma_get_bond_coupons
   description: 'Devuelve el cronograma de cupones y amortizaciones de un bono soberano: último cupón pagado
     y próximo pago. Ej: ''¿cuándo fue el último cupón del AL30?''. Bonos disponibles: AL30, GD30. Dataset
@@ -37,15 +37,16 @@ tools:
 - name: a3_get_quote
   description: 'Devuelve el cierre de la última rueda de un futuro u opción de A3: precio de ajuste (settlement),
     variación, máximo/mínimo, volumen, interés abierto y tasa implícita. Acepta símbolo APICEM (''DLR122026''),
-    formato Primary (''DLR/DIC26'') o leng'
+    formato Primary (''DLR/DIC26'') o lenguaje natural (''dólar diciembre 2026'', ''soja noviembre'').'
 - name: a3_get_futures_curve
   description: 'Devuelve la curva completa de futuros de un producto: todos los vencimientos operados
     en la última rueda con ajuste, variación, tasa implícita e interés abierto. Por defecto dólar (DLR)
-    — es LA tool para ''¿cómo está el dólar futuro?''. Tambi'
+    — es LA tool para ''¿cómo está el dólar futuro?''. También ''soja'', ''maíz'', ''trigo'', ''oro'',
+    ''RFX20''.'
 - name: a3_get_price_chart
   description: 'Devuelve la serie diaria de precios de ajuste (settlement) de un futuro de A3: un gráfico
     para mostrar y la serie completa rueda por rueda (fecha y ajuste) en el texto, para comparar, indexar
-    o calcular variaciones. Ej: ''gráfico del dólar d'
+    o calcular variaciones. Ej: ''gráfico del dólar diciembre del último mes''.'
 - name: a3_get_spot_prices
   description: 'Devuelve los precios spot e índices de referencia que publica A3: dólar BNA, dólar BCRA
     (comunicación A3500), MEP, CCL, euro, yuan, soja y maíz Chicago, oro, WTI, CER. Ej: ''¿cuál es el
@@ -57,7 +58,8 @@ tools:
 - name: yahoo_get_quote
   description: 'Devuelve la cotización de un instrumento en su mercado de origen: precio, variación del
     día, máximo y mínimo, volumen y rango de 52 semanas, más un sparkline del último mes. Acepta ticker
-    (''AAPL'', ''GGAL'', ''^GSPC'', ''BTC-USD'', ''GC=F'') o nombr'
+    (''AAPL'', ''GGAL'', ''^GSPC'', ''BTC-USD'', ''GC=F'') o nombre en castellano (''oro'', ''petróleo'',
+    ''merval'', ''bitcoin'', ''tasa 10 años'').'
 - name: yahoo_get_price_chart
   description: 'Devuelve la serie histórica de cierres de un instrumento global: un gráfico para mostrar
     y la serie completa día por día (fecha y cierre) en el texto, para comparar, indexar o calcular variaciones.
@@ -65,7 +67,7 @@ tools:
 - name: yahoo_get_market_overview
   description: 'Foto de las referencias que mira una mesa al abrir el día: S&P 500, Nasdaq, VIX, Merval,
     ADRs argentinos, oro, petróleo WTI, soja Chicago, Treasury a 10 años, euro, dólar/peso oficial y bitcoin,
-    cada uno con precio y variación. Es LA tool p'
+    cada uno con precio y variación. Es LA tool para ''¿cómo vienen los mercados hoy?''.'
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
 descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
